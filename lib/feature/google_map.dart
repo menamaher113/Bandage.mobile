@@ -30,6 +30,14 @@ class _GoogleMapScreenState extends State<GoogleMapScreen> {
         markerId: MarkerId("1"),
         position: latLng!,
       ),
+
+      Marker(
+        markerId: MarkerId("2"),
+        position: LatLng(29.98796203115496, 31.277268168347497),
+      ), Marker(
+        markerId: MarkerId("3"),
+        position: LatLng(29.984077660385548, 31.278126475238203),
+      ),
     };
   }
 

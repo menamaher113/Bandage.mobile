@@ -16,12 +16,14 @@ import 'package:bandage/dizzy_screen.dart';
 import 'package:bandage/epilepsy_screen.dart';
 import 'package:bandage/fainted_screen.dart';
 import 'package:bandage/bleeding_screen.dart';
+import 'package:bandage/feature/Chatpage/view.dart';
 import 'package:bandage/poisoning_screen.dart';
 import 'package:bandage/suffocation_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bounceable/flutter_bounceable.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
+
 
 class ArabicCategoryScreen extends StatefulWidget {
   const ArabicCategoryScreen({Key? key}) : super(key: key);
@@ -118,7 +120,7 @@ class _ArabicCategoryScreenState extends State<ArabicCategoryScreen> {
               label: 'روبوت الدردشة',
               labelBackgroundColor: Colors.blue,
               labelStyle: TextStyle(fontSize: 18.0,color: Colors.white,fontFamily: 'Tajawal'),
-              onTap: () => print('SECOND CHILD'),
+              onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ChatBotScreen(),)),
               onLongPress: () => print('SECOND CHILD LONG PRESS'),
             ),
           ],

@@ -6,7 +6,7 @@ import 'package:bandage/dizzy_screen.dart';
 import 'package:bandage/epilepsy_screen.dart';
 import 'package:bandage/fainted_screen.dart';
 import 'package:bandage/bleeding_screen.dart';
-import 'package:bandage/feature/google_map.dart';
+import 'package:bandage/feature/Chatpage/view.dart';
 import 'package:bandage/poisoning_screen.dart';
 import 'package:bandage/shared/components/permission_app.dart';
 import 'package:bandage/suffocation_screen.dart';
@@ -131,7 +131,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
               label: 'ChatBot',
               labelBackgroundColor: Colors.blue,
               labelStyle: TextStyle(fontSize: 18.0, color: Colors.white),
-              onTap: () => print('SECOND CHILD'),
+              onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ChatBotScreen(),)),
               onLongPress: () => print('SECOND CHILD LONG PRESS'),
             ),
           ],

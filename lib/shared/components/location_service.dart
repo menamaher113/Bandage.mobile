@@ -19,8 +19,8 @@ class LocationService {
         'https://maps.googleapis.com/maps/api/place/details/json?place_id=$placeid&key=$key';
     var respon = await http.get(Uri.parse(url));
     var pdfText = await json.decode(json.encode(respon.body));
-    var results = pdfText['result'] as Map<String, dynamic>;
-    print(results.toString());
-    return results;
+    // var results = pdfText['result'] as Map<String, dynamic>;
+    print(pdfText.toString());
+    return pdfText;
   }
 }
