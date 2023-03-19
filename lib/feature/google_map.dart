@@ -1,6 +1,7 @@
 import 'package:bandage/feature/google_stream.dart';
 import 'package:bandage/shared/components/location_service.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_share/flutter_share.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -152,6 +153,13 @@ class _GoogleMapScreenState extends State<GoogleMapScreen> {
                                     },
                                     icon: Icon(
                                       Icons.location_on_outlined,
+                                      color: Colors.red,
+                                    )),  IconButton(
+                                    onPressed: () {
+                                      FlutterShare.share(title: "My Location",linkUrl:"https://www.google.com/maps/search/?api=1&query=${latLng!.latitude},${latLng!.longitude}");
+                                    },
+                                    icon: Icon(
+                                      Icons.share,
                                       color: Colors.red,
                                     ))
                               ],

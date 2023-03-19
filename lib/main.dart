@@ -10,6 +10,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await DioApp.init(); 
   Bloc.observer = MyBlocObserver();
+ 
   runApp(const MyApp());
 }
 
@@ -24,3 +25,9 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+  /*
+  
+  lang device 
+   print(WidgetsBinding.instance.window.locale);
+   */

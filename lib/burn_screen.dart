@@ -14,6 +14,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bounceable/flutter_bounceable.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 
+import 'models/floatclass.dart';
+
 class BurnScreen extends StatefulWidget {
   const BurnScreen({Key? key}) : super(key: key);
 
@@ -25,97 +27,8 @@ class _BurnScreenState extends State<BurnScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: Container(
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(30),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.4),
-                spreadRadius: 8,
-                blurRadius: 14,
-                offset: Offset(2, 2),
-              )
-            ]),
-        child: SpeedDial( //Speed dial menu
-          icon: Icons.menu, //icon on Floating action button
-          activeIcon: Icons.close, //icon when menu is expanded on button
-          backgroundColor: Color(0xFFB40000), //background color of button
-          foregroundColor: Colors.white, //font color, icon color in button
-          activeBackgroundColor: Colors.deepPurpleAccent, //background color when menu is expanded
-          activeForegroundColor: Colors.white,
-          visible: true,
-          closeManually: false,
-          curve: Curves.bounceIn,
-          overlayColor: Colors.black,
-          overlayOpacity: 0.7,
-          onOpen: () => print('OPENING DIAL'), // action when menu opens
-          onClose: () => print('DIAL CLOSED'), //action when menu closes
-          elevation: 8.0, //shadow elevation of button
-          shape: CircleBorder(),
-          spacing: 10,//shape of button
-          spaceBetweenChildren: 5,
-          children: [
-            SpeedDialChild(
-              child: AboutListTile(
-                  applicationIcon: Icon(
-                    Icons.local_play,
-                  ),
-                  applicationName: 'Bandage App',
-                  applicationVersion: '1.0.0',
-                  applicationLegalese: '© 2023 Company',
-                  child: Icon(Icons.info_outline)),
-              backgroundColor: Colors.white,
-              label: 'About App',
-              labelStyle: TextStyle(fontSize: 18.0,color: Colors.black.withOpacity(0.6)),
-              onTap: () => print('FOURTH CHILD'),
-              onLongPress: () => print('FOURTH CHILD LONG PRESS'),
-            ),
-            SpeedDialChild(
-              child: Icon(Icons.translate),
-              foregroundColor: Colors.white,
-              backgroundColor: Colors.orange,
-              label: 'العربية',
-              labelBackgroundColor: Colors.orange,
-              labelStyle: TextStyle(fontSize: 18.0, fontFamily: 'Tajawal',color: Colors.white),
-              onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (Context) => ArabicBurnScreen()));
-              },
-              onLongPress: () => print('FIFTH CHILD LONG PRESS'),
-            ),
-            SpeedDialChild(
-              child: Icon(Icons.dark_mode),
-              foregroundColor: Colors.white,
-              backgroundColor: Colors.black,
-              label: 'Dark Mode',
-              labelBackgroundColor: Colors.black,
-              labelStyle: TextStyle(fontSize: 18.0,color: Colors.white),
-              onTap: () => print('THIRD CHILD'),
-              onLongPress: () => print('THIRD CHILD LONG PRESS'),
-            ),
-            SpeedDialChild( //speed dial child
-              child: Icon(Icons.emergency),
-              backgroundColor: Colors.red,
-              foregroundColor: Colors.white,
-              label: 'Emergency',
-              labelBackgroundColor: Colors.red,
-              labelStyle: TextStyle(fontSize: 18.0,color: Colors.white),
-              onTap: () => print('FIRST CHILD'),
-              onLongPress: () => print('FIRST CHILD LONG PRESS'),
-            ),
-            SpeedDialChild(
-              child: Icon(Icons.chat),
-              backgroundColor: Colors.blue,
-              foregroundColor: Colors.white,
-              label: 'ChatBot',
-              labelBackgroundColor: Colors.blue,
-              labelStyle: TextStyle(fontSize: 18.0,color: Colors.white),
-              onTap: () => print('SECOND CHILD'),
-              onLongPress: () => print('SECOND CHILD LONG PRESS'),
-            ),
-          ],
-        ),
-      ),
-      backgroundColor: Color(0xFFFFE9B1),
+     
+      floatingActionButton: FloatApp.float(context: context), backgroundColor: Color(0xFFFFE9B1),
       body: SafeArea(
         child: Column(
           children: [
